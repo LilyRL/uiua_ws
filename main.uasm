@@ -1,0 +1,14 @@
+"localhost:8080"
+["tcp_listen",1]
+["DO",[[0,1,1],[0,1,1]],2]
+
+BINDINGS
+
+FUNCTIONS
+
+SPANS
+"main.ua" [1,1,0,0] [1,6,5,5]
+"main.ua" [3,1,24,24] [3,2,27,25]
+
+FILES
+main.ua: "&tcpl \"localhost:8080\"\n\n⍢(1|1)\n"
