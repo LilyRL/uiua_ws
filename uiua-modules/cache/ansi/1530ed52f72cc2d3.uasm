@@ -1,0 +1,226 @@
+
+DEPENDENCIES
+
+EXPORTS
+Black 0
+Red 1
+Green 2
+Yellow 3
+Blue 4
+Magenta 5
+Cyan 6
+White 7
+BoldBlack 8
+BoldRed 9
+BoldGreen 10
+BoldYellow 11
+BoldBlue 12
+BoldMagenta 13
+BoldCyan 14
+BoldWhite 15
+BoldUWhite 16
+UnderlineBlack 17
+UnderlineRed 18
+UnderlineGreen 19
+UnderlineYellow 20
+UnderlineBlue 21
+UnderlineMagenta 22
+UnderlineCyan 23
+UnderlineWhite 24
+BackgroundBlack 25
+BackgroundRed 26
+BackgroundGreen 27
+BackgroundYellow 28
+BackgroundBlue 29
+BackgroundMagenta 30
+BackgroundCyan 31
+BackgroundWhite 32
+BlackOnWhite 33
+HighBackgroundBlack 34
+HighBackgroundRed 35
+HighBackgroundGreen 36
+HighBackgroundYellow 37
+HighBackgroundBlue 38
+HighBackgroundMagenta 39
+HighBackgroundCyan 40
+HighBackgroundWhite 41
+HighBlack 42
+HighRed 43
+HighGreen 44
+HighYellow 45
+HighBlue 46
+HighMagenta 47
+HighCyan 48
+HighWhite 49
+BoldHighBlack 50
+BoldHighRed 51
+BoldHighGreen 52
+BoldHighYellow 53
+BoldHighBlue 54
+BoldHighMagenta 55
+BoldHighCyan 56
+BoldHighWhite 57
+Reset 58
+CReset 59
+ColorReset 60
+Invert 61
+ItalicGrey 62
+Italic 63
+ItalicWhite 64
+RedStruck 65
+
+BINDINGS
+const "\u001b[0;30m" 1
+  comment: {"text":"Regular text"}
+const "\u001b[0;31m" 2
+const "\u001b[0;32m" 3
+const "\u001b[0;33m" 4
+const "\u001b[0;34m" 5
+const "\u001b[0;35m" 6
+const "\u001b[0;36m" 7
+const "\u001b[0;37m" 8
+const "\u001b[1;30m" 9
+  comment: {"text":"Regular bold text"}
+const "\u001b[1;31m" 10
+const "\u001b[1;32m" 11
+const "\u001b[1;33m" 12
+const "\u001b[1;34m" 13
+const "\u001b[1;35m" 14
+const "\u001b[1;36m" 15
+const "\u001b[0m\u001b[1;37m" 16
+const "\u001b[1;4;37m" 17
+const "\u001b[4;30m" 18
+  comment: {"text":"Regular underline text"}
+const "\u001b[4;31m" 19
+const "\u001b[4;32m" 20
+const "\u001b[4;33m" 21
+const "\u001b[4;34m" 22
+const "\u001b[4;35m" 23
+const "\u001b[4;36m" 24
+const "\u001b[4;37m" 25
+const "\u001b[40m" 26
+  comment: {"text":"Regular background"}
+const "\u001b[41m" 27
+const "\u001b[42m" 28
+const "\u001b[43m" 29
+const "\u001b[44m" 30
+const "\u001b[45m" 31
+const "\u001b[46m" 32
+const "\u001b[47m" 33
+const "\u001b[30;47m" 34
+const "\u001b[0;100m" 35
+  comment: {"text":"High intensity background"}
+const "\u001b[0;101m" 36
+const "\u001b[0;102m" 37
+const "\u001b[0;103m" 38
+const "\u001b[0;104m" 39
+const "\u001b[0;105m" 40
+const "\u001b[0;106m" 41
+const "\u001b[0;107m" 42
+const "\u001b[0;90m" 43
+  comment: {"text":"High intensity text"}
+const "\u001b[0;91m" 44
+const "\u001b[0;92m" 45
+const "\u001b[0;93m" 46
+const "\u001b[0;94m" 47
+const "\u001b[0;95m" 48
+const "\u001b[0;96m" 49
+const "\u001b[0;97m" 50
+const "\u001b[1;90m" 51
+  comment: {"text":"Bold high intensity text"}
+const "\u001b[1;91m" 52
+const "\u001b[1;92m" 53
+const "\u001b[1;93m" 54
+const "\u001b[1;94m" 55
+const "\u001b[1;95m" 56
+const "\u001b[1;96m" 57
+const "\u001b[1;97m" 58
+const "\u001b[m" 59
+  comment: {"text":"Reset codes"}
+const "\u001b[0m" 60
+const "\u001b[0m" 61
+const "\u001b[7m" 62
+  comment: {"text":"Special styles"}
+const "\u001b[3;90m" 63
+const "\u001b[3m" 64
+const "\u001b[0m\u001b[3;37m" 65
+const "\u001b[9m" 66
+
+FUNCTIONS
+
+INDEX MACROS
+
+CODE MACROS
+
+SPANS
+file0 [2,1,15,15] [2,6,20,20]
+file0 [3,1,40,38] [3,4,43,41]
+file0 [4,1,65,61] [4,6,70,66]
+file0 [5,1,90,84] [5,7,96,90]
+file0 [6,1,115,107] [6,5,119,111]
+file0 [7,1,140,130] [7,8,147,137]
+file0 [8,1,165,153] [8,5,169,157]
+file0 [9,1,190,176] [9,6,195,181]
+file0 [12,1,236,220] [12,10,245,229]
+file0 [13,1,265,247] [13,8,272,254]
+file0 [14,1,294,274] [14,10,303,283]
+file0 [15,1,323,301] [15,11,333,311]
+file0 [16,1,352,328] [16,9,360,336]
+file0 [17,1,381,355] [17,12,392,366]
+file0 [18,1,410,382] [18,9,418,390]
+file0 [19,1,439,409] [19,10,448,418]
+file0 [20,1,475,443] [20,11,485,453]
+file0 [23,1,532,498] [23,15,546,512]
+file0 [24,1,566,530] [24,13,578,542]
+file0 [25,1,600,562] [25,15,614,576]
+file0 [26,1,634,594] [26,16,649,609]
+file0 [27,1,668,626] [27,14,681,639]
+file0 [28,1,702,658] [28,17,718,674]
+file0 [29,1,736,690] [29,14,749,703]
+file0 [30,1,770,722] [30,15,784,736]
+file0 [33,1,826,776] [33,16,841,791]
+file0 [34,1,859,807] [34,14,872,820]
+file0 [35,1,892,838] [35,16,907,853]
+file0 [36,1,925,869] [36,17,941,885]
+file0 [37,1,958,900] [37,15,972,914]
+file0 [38,1,991,931] [38,18,1008,948]
+file0 [39,1,1024,962] [39,15,1038,976]
+file0 [40,1,1057,993] [40,16,1072,1008]
+file0 [41,1,1090,1024] [41,13,1102,1036]
+file0 [44,1,1155,1087] [44,20,1174,1106]
+file0 [45,1,1195,1125] [45,18,1212,1142]
+file0 [46,1,1235,1163] [46,20,1254,1182]
+file0 [47,1,1275,1201] [47,21,1295,1221]
+file0 [48,1,1315,1239] [48,19,1333,1257]
+file0 [49,1,1355,1277] [49,22,1376,1298]
+file0 [50,1,1395,1315] [50,19,1413,1333]
+file0 [51,1,1435,1353] [51,20,1454,1372]
+file0 [54,1,1498,1414] [54,10,1507,1423]
+file0 [55,1,1527,1441] [55,8,1534,1448]
+file0 [56,1,1556,1468] [56,10,1565,1477]
+file0 [57,1,1585,1495] [57,11,1595,1505]
+file0 [58,1,1614,1522] [58,9,1622,1530]
+file0 [59,1,1643,1549] [59,12,1654,1560]
+file0 [60,1,1672,1576] [60,9,1680,1584]
+file0 [61,1,1701,1603] [61,10,1710,1612]
+file0 [64,1,1758,1658] [64,14,1771,1671]
+file0 [65,1,1791,1689] [65,12,1802,1700]
+file0 [66,1,1824,1720] [66,14,1837,1733]
+file0 [67,1,1857,1751] [67,15,1871,1765]
+file0 [68,1,1890,1782] [68,13,1902,1794]
+file0 [69,1,1923,1813] [69,16,1938,1828]
+file0 [70,1,1956,1844] [70,13,1968,1856]
+file0 [71,1,1989,1875] [71,14,2002,1888]
+file0 [74,1,2037,1921] [74,6,2042,1926]
+file0 [75,1,2061,1943] [75,7,2067,1949]
+file0 [76,1,2086,1966] [76,11,2096,1976]
+file0 [79,1,2129,2007] [79,7,2135,2013]
+file0 [80,1,2155,2031] [80,11,2165,2041]
+file0 [81,1,2184,2058] [81,7,2190,2064]
+file0 [82,1,2210,2082] [82,12,2221,2093]
+file0 [83,1,2246,2116] [83,10,2255,2125]
+
+FILES
+ansi.ua: "# Regular text\nBlack   ← \"\\x1b[0;30m\"\nRed     ← \"\\x1b[0;31m\"\nGreen   ← \"\\x1b[0;32m\"\nYellow  ← \"\\x1b[0;33m\"\nBlue    ← \"\\x1b[0;34m\"\nMagenta ← \"\\x1b[0;35m\"\nCyan    ← \"\\x1b[0;36m\"\nWhite   ← \"\\x1b[0;37m\"\n\n# Regular bold text\nBoldBlack   ← \"\\x1b[1;30m\"\nBoldRed     ← \"\\x1b[1;31m\"\nBoldGreen   ← \"\\x1b[1;32m\"\nBoldYellow  ← \"\\x1b[1;33m\"\nBoldBlue    ← \"\\x1b[1;34m\"\nBoldMagenta ← \"\\x1b[1;35m\"\nBoldCyan    ← \"\\x1b[1;36m\"\nBoldWhite   ← \"\\x1b[0m\\x1b[1;37m\"\nBoldUWhite  ← \"\\x1b[1;4;37m\"\n\n# Regular underline text\nUnderlineBlack   ← \"\\x1b[4;30m\"\nUnderlineRed     ← \"\\x1b[4;31m\"\nUnderlineGreen   ← \"\\x1b[4;32m\"\nUnderlineYellow  ← \"\\x1b[4;33m\"\nUnderlineBlue    ← \"\\x1b[4;34m\"\nUnderlineMagenta ← \"\\x1b[4;35m\"\nUnderlineCyan    ← \"\\x1b[4;36m\"\nUnderlineWhite   ← \"\\x1b[4;37m\"\n\n# Regular background\nBackgroundBlack   ← \"\\x1b[40m\"\nBackgroundRed     ← \"\\x1b[41m\"\nBackgroundGreen   ← \"\\x1b[42m\"\nBackgroundYellow  ← \"\\x1b[43m\"\nBackgroundBlue    ← \"\\x1b[44m\"\nBackgroundMagenta ← \"\\x1b[45m\"\nBackgroundCyan    ← \"\\x1b[46m\"\nBackgroundWhite   ← \"\\x1b[47m\"\nBlackOnWhite      ← \"\\x1b[30;47m\"\n\n# High intensity background\nHighBackgroundBlack   ← \"\\x1b[0;100m\"\nHighBackgroundRed     ← \"\\x1b[0;101m\"\nHighBackgroundGreen   ← \"\\x1b[0;102m\"\nHighBackgroundYellow  ← \"\\x1b[0;103m\"\nHighBackgroundBlue    ← \"\\x1b[0;104m\"\nHighBackgroundMagenta ← \"\\x1b[0;105m\"\nHighBackgroundCyan    ← \"\\x1b[0;106m\"\nHighBackgroundWhite   ← \"\\x1b[0;107m\"\n\n# High intensity text\nHighBlack   ← \"\\x1b[0;90m\"\nHighRed     ← \"\\x1b[0;91m\"\nHighGreen   ← \"\\x1b[0;92m\"\nHighYellow  ← \"\\x1b[0;93m\"\nHighBlue    ← \"\\x1b[0;94m\"\nHighMagenta ← \"\\x1b[0;95m\"\nHighCyan    ← \"\\x1b[0;96m\"\nHighWhite   ← \"\\x1b[0;97m\"\n\n# Bold high intensity text\nBoldHighBlack   ← \"\\x1b[1;90m\"\nBoldHighRed     ← \"\\x1b[1;91m\"\nBoldHighGreen   ← \"\\x1b[1;92m\"\nBoldHighYellow  ← \"\\x1b[1;93m\"\nBoldHighBlue    ← \"\\x1b[1;94m\"\nBoldHighMagenta ← \"\\x1b[1;95m\"\nBoldHighCyan    ← \"\\x1b[1;96m\"\nBoldHighWhite   ← \"\\x1b[1;97m\"\n\n# Reset codes\nReset      ← \"\\x1b[m\"\nCReset     ← \"\\x1b[0m\"\nColorReset ← \"\\x1b[0m\"\n\n# Special styles\nInvert      ← \"\\x1b[7m\"\nItalicGrey  ← \"\\x1b[3;90m\"\nItalic      ← \"\\x1b[3m\"\nItalicWhite ← \"\\x1b[0m\\x1b[3;37m\"\nRedStruck   ← \"\\x1b[9m\"\n"
+
+MACRO EXPANSIONS

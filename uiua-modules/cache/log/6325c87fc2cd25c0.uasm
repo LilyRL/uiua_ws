@@ -1,0 +1,192 @@
+
+DEPENDENCIES
+ansi.ua 16902313719361630622
+
+EXPORTS
+Ansi 0
+Log 67
+
+BINDINGS
+module {"comment":"Regular text","names":{"BackgroundBlack":[{"index":26,"public":true}],"BackgroundBlue":[{"index":30,"public":true}],"BackgroundCyan":[{"index":32,"public":true}],"BackgroundGreen":[{"index":28,"public":true}],"BackgroundMagenta":[{"index":31,"public":true}],"BackgroundRed":[{"index":27,"public":true}],"BackgroundWhite":[{"index":33,"public":true}],"BackgroundYellow":[{"index":29,"public":true}],"Black":[{"index":1,"public":true}],"BlackOnWhite":[{"index":34,"public":true}],"Blue":[{"index":5,"public":true}],"BoldBlack":[{"index":9,"public":true}],"BoldBlue":[{"index":13,"public":true}],"BoldCyan":[{"index":15,"public":true}],"BoldGreen":[{"index":11,"public":true}],"BoldHighBlack":[{"index":51,"public":true}],"BoldHighBlue":[{"index":55,"public":true}],"BoldHighCyan":[{"index":57,"public":true}],"BoldHighGreen":[{"index":53,"public":true}],"BoldHighMagenta":[{"index":56,"public":true}],"BoldHighRed":[{"index":52,"public":true}],"BoldHighWhite":[{"index":58,"public":true}],"BoldHighYellow":[{"index":54,"public":true}],"BoldMagenta":[{"index":14,"public":true}],"BoldRed":[{"index":10,"public":true}],"BoldUWhite":[{"index":17,"public":true}],"BoldWhite":[{"index":16,"public":true}],"BoldYellow":[{"index":12,"public":true}],"CReset":[{"index":60,"public":true}],"ColorReset":[{"index":61,"public":true}],"Cyan":[{"index":7,"public":true}],"Green":[{"index":3,"public":true}],"HighBackgroundBlack":[{"index":35,"public":true}],"HighBackgroundBlue":[{"index":39,"public":true}],"HighBackgroundCyan":[{"index":41,"public":true}],"HighBackgroundGreen":[{"index":37,"public":true}],"HighBackgroundMagenta":[{"index":40,"public":true}],"HighBackgroundRed":[{"index":36,"public":true}],"HighBackgroundWhite":[{"index":42,"public":true}],"HighBackgroundYellow":[{"index":38,"public":true}],"HighBlack":[{"index":43,"public":true}],"HighBlue":[{"index":47,"public":true}],"HighCyan":[{"index":49,"public":true}],"HighGreen":[{"index":45,"public":true}],"HighMagenta":[{"index":48,"public":true}],"HighRed":[{"index":44,"public":true}],"HighWhite":[{"index":50,"public":true}],"HighYellow":[{"index":46,"public":true}],"Invert":[{"index":62,"public":true}],"Italic":[{"index":64,"public":true}],"ItalicGrey":[{"index":63,"public":true}],"ItalicWhite":[{"index":65,"public":true}],"Magenta":[{"index":6,"public":true}],"Red":[{"index":2,"public":true}],"RedStruck":[{"index":66,"public":true}],"Reset":[{"index":59,"public":true}],"UnderlineBlack":[{"index":18,"public":true}],"UnderlineBlue":[{"index":22,"public":true}],"UnderlineCyan":[{"index":24,"public":true}],"UnderlineGreen":[{"index":20,"public":true}],"UnderlineMagenta":[{"index":23,"public":true}],"UnderlineRed":[{"index":19,"public":true}],"UnderlineWhite":[{"index":25,"public":true}],"UnderlineYellow":[{"index":21,"public":true}],"White":[{"index":8,"public":true}],"Yellow":[{"index":4,"public":true}]}} 0
+const "\u001b[0;30m" 1
+  comment: {"text":"Regular text"}
+const "\u001b[0;31m" 2
+const "\u001b[0;32m" 3
+const "\u001b[0;33m" 4
+const "\u001b[0;34m" 5
+const "\u001b[0;35m" 6
+const "\u001b[0;36m" 7
+const "\u001b[0;37m" 8
+const "\u001b[1;30m" 9
+  comment: {"text":"Regular bold text"}
+const "\u001b[1;31m" 10
+const "\u001b[1;32m" 11
+const "\u001b[1;33m" 12
+const "\u001b[1;34m" 13
+const "\u001b[1;35m" 14
+const "\u001b[1;36m" 15
+const "\u001b[0m\u001b[1;37m" 16
+const "\u001b[1;4;37m" 17
+const "\u001b[4;30m" 18
+  comment: {"text":"Regular underline text"}
+const "\u001b[4;31m" 19
+const "\u001b[4;32m" 20
+const "\u001b[4;33m" 21
+const "\u001b[4;34m" 22
+const "\u001b[4;35m" 23
+const "\u001b[4;36m" 24
+const "\u001b[4;37m" 25
+const "\u001b[40m" 26
+  comment: {"text":"Regular background"}
+const "\u001b[41m" 27
+const "\u001b[42m" 28
+const "\u001b[43m" 29
+const "\u001b[44m" 30
+const "\u001b[45m" 31
+const "\u001b[46m" 32
+const "\u001b[47m" 33
+const "\u001b[30;47m" 34
+const "\u001b[0;100m" 35
+  comment: {"text":"High intensity background"}
+const "\u001b[0;101m" 36
+const "\u001b[0;102m" 37
+const "\u001b[0;103m" 38
+const "\u001b[0;104m" 39
+const "\u001b[0;105m" 40
+const "\u001b[0;106m" 41
+const "\u001b[0;107m" 42
+const "\u001b[0;90m" 43
+  comment: {"text":"High intensity text"}
+const "\u001b[0;91m" 44
+const "\u001b[0;92m" 45
+const "\u001b[0;93m" 46
+const "\u001b[0;94m" 47
+const "\u001b[0;95m" 48
+const "\u001b[0;96m" 49
+const "\u001b[0;97m" 50
+const "\u001b[1;90m" 51
+  comment: {"text":"Bold high intensity text"}
+const "\u001b[1;91m" 52
+const "\u001b[1;92m" 53
+const "\u001b[1;93m" 54
+const "\u001b[1;94m" 55
+const "\u001b[1;95m" 56
+const "\u001b[1;96m" 57
+const "\u001b[1;97m" 58
+const "\u001b[m" 59
+  comment: {"text":"Reset codes"}
+const "\u001b[0m" 60
+const "\u001b[0m" 61
+const "\u001b[7m" 62
+  comment: {"text":"Special styles"}
+const "\u001b[3;90m" 63
+const "\u001b[3m" 64
+const "\u001b[0m\u001b[3;37m" 65
+const "\u001b[9m" 66
+module {"names":{"Debug":[{"index":69,"public":true}],"Error":[{"index":72,"public":true}],"Log":[{"index":70,"public":true}],"PrintColoredText":[{"index":68,"public":true}],"Warn":[{"index":71,"public":true}]}} 0
+func ["PrintColoredText",[2,0],0,1250620966529838911,68] 68
+func ["Debug",[1,0],1,507715068783528844,69] 71
+func ["Log",[1,0],2,12844118234000672438,70] 74
+func ["Warn",[1,0],3,17167969272789369515,71] 77
+func ["Error",[1,0],4,7533004290601213159,72] 80
+
+FUNCTIONS
+[{"format":[["","",""],69]},["print",70]]
+[{"format":[["[DEBUG] ",""],72]},{"push":"\u001b[0;90m"},[["PrintColoredText",[2,0],0,1250620966529838911,68],73]]
+[{"format":[["[LOG]   ",""],75]},{"push":"\u001b[0;34m"},[["PrintColoredText",[2,0],0,1250620966529838911,68],76]]
+[{"format":[["[WARN]  ",""],78]},{"push":"\u001b[0;33m"},[["PrintColoredText",[2,0],0,1250620966529838911,68],79]]
+[{"format":[["[ERROR] ",""],81]},{"push":"\u001b[0;31m"},[["PrintColoredText",[2,0],0,1250620966529838911,68],82]]
+
+INDEX MACROS
+
+CODE MACROS
+
+SPANS
+file0 [3,3,33,27] [3,8,38,32]
+file0 [4,3,60,52] [4,6,63,55]
+file0 [5,3,87,77] [5,8,92,82]
+file0 [6,3,114,102] [6,9,120,108]
+file0 [7,3,141,127] [7,7,145,131]
+file0 [8,3,168,152] [8,10,175,159]
+file0 [9,3,195,177] [9,7,199,181]
+file0 [10,3,222,202] [10,8,227,207]
+file0 [13,3,272,250] [13,12,281,259]
+file0 [14,3,303,279] [14,10,310,286]
+file0 [15,3,334,308] [15,12,343,317]
+file0 [16,3,365,337] [16,13,375,347]
+file0 [17,3,396,366] [17,11,404,374]
+file0 [18,3,427,395] [18,14,438,406]
+file0 [19,3,458,424] [19,11,466,432]
+file0 [20,3,489,453] [20,12,498,462]
+file0 [21,3,527,489] [21,13,537,499]
+file0 [24,3,588,548] [24,17,602,562]
+file0 [25,3,624,582] [25,15,636,594]
+file0 [26,3,660,616] [26,17,674,630]
+file0 [27,3,696,650] [27,18,711,665]
+file0 [28,3,732,684] [28,16,745,697]
+file0 [29,3,768,718] [29,19,784,734]
+file0 [30,3,804,752] [30,16,817,765]
+file0 [31,3,840,786] [31,17,854,800]
+file0 [34,3,900,844] [34,18,915,859]
+file0 [35,3,935,877] [35,16,948,890]
+file0 [36,3,970,910] [36,18,985,925]
+file0 [37,3,1005,943] [37,19,1021,959]
+file0 [38,3,1040,976] [38,17,1054,990]
+file0 [39,3,1075,1009] [39,20,1092,1026]
+file0 [40,3,1110,1042] [40,17,1124,1056]
+file0 [41,3,1145,1075] [41,18,1160,1090]
+file0 [42,3,1180,1108] [42,15,1192,1120]
+file0 [45,3,1249,1175] [45,22,1268,1194]
+file0 [46,3,1291,1215] [46,20,1308,1232]
+file0 [47,3,1333,1255] [47,22,1352,1274]
+file0 [48,3,1375,1295] [48,23,1395,1315]
+file0 [49,3,1417,1335] [49,21,1435,1353]
+file0 [50,3,1459,1375] [50,24,1480,1396]
+file0 [51,3,1501,1415] [51,21,1519,1433]
+file0 [52,3,1543,1455] [52,22,1562,1474]
+file0 [55,3,1610,1520] [55,12,1619,1529]
+file0 [56,3,1641,1549] [56,10,1648,1556]
+file0 [57,3,1672,1578] [57,12,1681,1587]
+file0 [58,3,1703,1607] [58,13,1713,1617]
+file0 [59,3,1734,1636] [59,11,1742,1644]
+file0 [60,3,1765,1665] [60,14,1776,1676]
+file0 [61,3,1796,1694] [61,11,1804,1702]
+file0 [62,3,1827,1723] [62,12,1836,1732]
+file0 [65,3,1888,1782] [65,16,1901,1795]
+file0 [66,3,1923,1815] [66,14,1934,1826]
+file0 [67,3,1958,1848] [67,16,1971,1861]
+file0 [68,3,1993,1881] [68,17,2007,1895]
+file0 [69,3,2028,1914] [69,15,2040,1926]
+file0 [70,3,2063,1947] [70,18,2078,1962]
+file0 [71,3,2098,1980] [71,15,2110,1992]
+file0 [72,3,2133,2013] [72,16,2146,2026]
+file0 [75,3,2185,2063] [75,8,2190,2068]
+file0 [76,3,2211,2087] [76,9,2217,2093]
+file0 [77,3,2238,2112] [77,13,2248,2122]
+file0 [80,3,2285,2157] [80,9,2291,2163]
+file0 [81,3,2313,2183] [81,13,2323,2193]
+file0 [82,3,2344,2212] [82,9,2350,2218]
+file0 [83,3,2372,2238] [83,14,2383,2249]
+file0 [84,3,2410,2274] [84,12,2419,2283]
+
+file1 [4,3,35,29] [4,19,51,45]
+file1 [4,26,60,52] [4,31,65,57]
+file1 [4,23,57,49] [4,25,59,51]
+file1 [5,3,69,61] [5,8,74,66]
+file1 [5,55,123,113] [5,67,135,125]
+file1 [5,23,91,81] [5,39,107,97]
+file1 [6,3,139,129] [6,6,142,132]
+file1 [6,50,188,176] [6,62,200,188]
+file1 [6,23,161,149] [6,39,177,165]
+file1 [7,3,204,192] [7,7,208,196]
+file1 [7,52,255,241] [7,64,267,253]
+file1 [7,23,226,212] [7,39,242,228]
+file1 [8,3,271,257] [8,8,276,262]
+file1 [8,49,319,303] [8,61,331,315]
+file1 [8,23,293,277] [8,39,309,293]
+
+FILES
+ansi.ua: "┌─╴Ansi\n  # Regular text\n  Black   ← \"\\x1b[0;30m\"\n  Red     ← \"\\x1b[0;31m\"\n  Green   ← \"\\x1b[0;32m\"\n  Yellow  ← \"\\x1b[0;33m\"\n  Blue    ← \"\\x1b[0;34m\"\n  Magenta ← \"\\x1b[0;35m\"\n  Cyan    ← \"\\x1b[0;36m\"\n  White   ← \"\\x1b[0;37m\"\n\n  # Regular bold text\n  BoldBlack   ← \"\\x1b[1;30m\"\n  BoldRed     ← \"\\x1b[1;31m\"\n  BoldGreen   ← \"\\x1b[1;32m\"\n  BoldYellow  ← \"\\x1b[1;33m\"\n  BoldBlue    ← \"\\x1b[1;34m\"\n  BoldMagenta ← \"\\x1b[1;35m\"\n  BoldCyan    ← \"\\x1b[1;36m\"\n  BoldWhite   ← \"\\x1b[0m\\x1b[1;37m\"\n  BoldUWhite  ← \"\\x1b[1;4;37m\"\n\n  # Regular underline text\n  UnderlineBlack   ← \"\\x1b[4;30m\"\n  UnderlineRed     ← \"\\x1b[4;31m\"\n  UnderlineGreen   ← \"\\x1b[4;32m\"\n  UnderlineYellow  ← \"\\x1b[4;33m\"\n  UnderlineBlue    ← \"\\x1b[4;34m\"\n  UnderlineMagenta ← \"\\x1b[4;35m\"\n  UnderlineCyan    ← \"\\x1b[4;36m\"\n  UnderlineWhite   ← \"\\x1b[4;37m\"\n\n  # Regular background\n  BackgroundBlack   ← \"\\x1b[40m\"\n  BackgroundRed     ← \"\\x1b[41m\"\n  BackgroundGreen   ← \"\\x1b[42m\"\n  BackgroundYellow  ← \"\\x1b[43m\"\n  BackgroundBlue    ← \"\\x1b[44m\"\n  BackgroundMagenta ← \"\\x1b[45m\"\n  BackgroundCyan    ← \"\\x1b[46m\"\n  BackgroundWhite   ← \"\\x1b[47m\"\n  BlackOnWhite      ← \"\\x1b[30;47m\"\n\n  # High intensity background\n  HighBackgroundBlack   ← \"\\x1b[0;100m\"\n  HighBackgroundRed     ← \"\\x1b[0;101m\"\n  HighBackgroundGreen   ← \"\\x1b[0;102m\"\n  HighBackgroundYellow  ← \"\\x1b[0;103m\"\n  HighBackgroundBlue    ← \"\\x1b[0;104m\"\n  HighBackgroundMagenta ← \"\\x1b[0;105m\"\n  HighBackgroundCyan    ← \"\\x1b[0;106m\"\n  HighBackgroundWhite   ← \"\\x1b[0;107m\"\n\n  # High intensity text\n  HighBlack   ← \"\\x1b[0;90m\"\n  HighRed     ← \"\\x1b[0;91m\"\n  HighGreen   ← \"\\x1b[0;92m\"\n  HighYellow  ← \"\\x1b[0;93m\"\n  HighBlue    ← \"\\x1b[0;94m\"\n  HighMagenta ← \"\\x1b[0;95m\"\n  HighCyan    ← \"\\x1b[0;96m\"\n  HighWhite   ← \"\\x1b[0;97m\"\n\n  # Bold high intensity text\n  BoldHighBlack   ← \"\\x1b[1;90m\"\n  BoldHighRed     ← \"\\x1b[1;91m\"\n  BoldHighGreen   ← \"\\x1b[1;92m\"\n  BoldHighYellow  ← \"\\x1b[1;93m\"\n  BoldHighBlue    ← \"\\x1b[1;94m\"\n  BoldHighMagenta ← \"\\x1b[1;95m\"\n  BoldHighCyan    ← \"\\x1b[1;96m\"\n  BoldHighWhite   ← \"\\x1b[1;97m\"\n\n  # Reset codes\n  Reset      ← \"\\x1b[m\"\n  CReset     ← \"\\x1b[0m\"\n  ColorReset ← \"\\x1b[0m\"\n\n  # Special styles\n  Invert      ← \"\\x1b[7m\"\n  ItalicGrey  ← \"\\x1b[3;90m\"\n  Italic      ← \"\\x1b[3m\"\n  ItalicWhite ← \"\\x1b[0m\\x1b[3;37m\"\n  RedStruck   ← \"\\x1b[9m\"\n└─╴\n"
+log.ua: "~ \"ansi.ua\" ~ Ansi\n\n┌─╴Log\n  PrintColoredText ← (&p $\"__\")\n  Debug            ← (PrintColoredText Ansi~HighBlack $\"[DEBUG] _\")\n  Log              ← (PrintColoredText Ansi~Blue $\"[LOG]   _\")\n  Warn             ← (PrintColoredText Ansi~Yellow $\"[WARN]  _\")\n  Error            ← (PrintColoredText Ansi~Red $\"[ERROR] _\")\n└─╴\n"
+
+MACRO EXPANSIONS

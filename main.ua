@@ -1,9 +1,19 @@
 # Experimental!
 
+~ "log.ua" ~ Log
+
 ┌─╴WebServer
-  ~State {Map Listener}
+  ~State {Map FileTypeMap Listener}
 
   ┌─╴Utils
+    ~Route {Type InnerData}
+    RouteTypeServeFile ← 0
+    ~ServeFileRoute {Path MimeType}
+
+    FileTypeMap ← (
+      map {"html" "htm" "js" "json"} {"text/html" "text/html" "application/javascript" "application/json"}
+    )
+
     SplitByFirst ← (
       # get indexes of matching elements in array
       ⊚⊸=
@@ -13,12 +23,30 @@
       ⨬(⊜□≠⊙(⇡⊸⧻)⊢|◌)=0⊸⧻
     )
 
+    SplitByLast ← (
+      # get indexes of matching elements in array
+      ⊚⊸=
+      # check if the length of the array is 0, aka if there are any matches
+      #   if there are no matches: return the string as is
+      #   if there is at least one match, we can take the first index and partition the array around it
+      ⨬(⊜□≠⊙(⇡⊸⧻)⊣|◌)=0⊸⧻
+    )
+
+    # get mime type from: file name, state
+    RecogniseFileType ← |2.2 (⬚"text/plain"get⊣SplitByLast @. ⊙⊸State~FileTypeMap)
+
+    # create a serve file route
+    Sfr ← (
+      Route RouteTypeServeFile ServeFileRoute
+    )
+
     ParseRequest ← (
       # split by newlines
       ⊜□⊸≠"\n"
       # remove the first line, e.g: "GET / HTTP/1.1",
       # since that has no colon and need to be parsed seperately
       ⊸⊢
+      Log~Log⊸∘
       ⊙(↘1)
       # split by colon
       ⊙≡(
@@ -40,11 +68,26 @@
       insert "Protocol" ⊡ 2
     )
 
+    # files are served from the /www directory
     GetFile ← |1 (
       &fras $"www/_"
     )
 
-    ReturnOk ← |1 ($"HTTP/1.1 200 OK\nContent-Length: _\n\n_" ⊸⧻)
+    # wrap text in a HTTP OK message
+    # media-type, body
+    ReturnOk ← |2 (˜$"HTTP/1.1 200 OK\nContent-Length: _\nContent-Type: _\n\n_" ⊙⊸⧻)
+
+    # get text content of route
+    HandleRoute ← |1 (
+      ⊸Route~Type°□
+      # 0: ServeFileRoute
+      ⨬(Route~InnerData
+        ⊸ServeFileRoute~MimeType
+        ⊙ServeFileRoute~Path
+        ⊙GetFile
+        ReturnOk
+      | ⍤ "Invalid route type")
+    )
 
     AcceptConnection ← |1 (
       &tcpa ⊸State~Listener
@@ -58,15 +101,16 @@
         # get path of request
         □↘1°□ get"Path"
         # get route, if it doesn't exist, try get route 404, else return string "404"
-        ⍣(GetFile ⊸get|GetFile ⊸get□"404"◌|"404")
+        ⍣(HandleRoute ⊸get|HandleRoute ⊸get□"404"◌|ReturnOk "text/plain" "404: Page not found")
         ⊙◌)
-      ˜(&w ReturnOk)
+      ˜(⊸&w)
+      &cl
     )
 
   └─╴
 
   New ← |1 (
-    State map [] [] &tcpl
+    State map [] [] Utils~FileTypeMap &tcpl
   )
 
   Listen ← |1.0 (
@@ -79,21 +123,44 @@
     ⍜(⊙⊙State~Map)insert ∩□
   )
 
-  # serves a file as the index
-  # file path, state object
-  ServeIndex ← |2 (Serve "")
-
   # serves a file at its path
   # path, state object
   ServeFile ← |2 (
+    ⟜Utils~RecogniseFileType
     ⊸∘
     # check if path ends in .html
     =5/+=".html"⬚@ ⊸↙¯5
     ⨬( # if it is not a html file, just serve it normally
-      Serve
+      Serve ⊙(Utils~Sfr)
     | # if it is a html file, we want to serve it from /whatever.html
       # and /whatever (without .html)
-      Serve↘¯5 ⟜∘ ⟜Serve
+      Serve ↘¯5 ⊙⊙◌◠Serve ⊙Utils~Sfr
+    )
+  )
+
+  # serves a file at a custom path
+  # site path, file path, state object
+  ServeFileAt ← (
+    ⊙⟜Utils~RecogniseFileType
+    ⊙Utils~Sfr
+    Serve
+  )
+
+  # serves a file as the index
+  # file path, state object
+  ServeIndex ← |2 (ServeFileAt "/")
+
+  ServeDir ← |2 (
+    # get a list of all the files in the directory
+    # remove leading /
+    &fld $"www/_"
+    # serve all of the files
+    ∧(
+      °□
+      # check if it is a file,
+      # if it is: serve it,
+      # if it isnt: serve all the files inside it
+      ⨬(ServeDir|ServeFile) ⊙(↘4) ⊸&fif
     )
   )
 
@@ -101,6 +168,6 @@
 
 # served files must be in www/
 WebServer~New "localhost:8000"
-WebServer~ServeFile "404.html"
+WebServer~ServeDir ""
 WebServer~ServeIndex "index.html"
 WebServer~Listen
