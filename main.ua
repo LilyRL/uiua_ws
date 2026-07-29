@@ -8,7 +8,9 @@
   ┌─╴Utils
     ~Route {Type InnerData}
     RouteTypeServeFile ← 0
+    RouteTypeDynamic   ← 1
     ~ServeFileRoute {Path MimeType}
+    ~DynamicRoute {Code MimeType}
 
     FileTypeMap ← (
       map {"html" "htm" "js" "json"} {"text/html" "text/html" "application/javascript" "application/json"}
@@ -38,6 +40,28 @@
     # create a serve file route
     Sfr ← (
       Route RouteTypeServeFile ServeFileRoute
+    )
+
+    Dr ← (
+      Route RouteTypeDynamic DynamicRoute
+    )
+
+    # this is super hacky, but uiua has no way to eval code at runtime or create function pointers
+    Eval ← |1 (
+      &runc {"uiua" "eval" ∘}
+      ◌◌
+      ↘¯3
+      ⍜⊜∘≡⋅@\n ⊸⦷ "\\n"
+    )
+
+    # code, arguement
+    EvalWithArguement ← |2 (
+      Eval $"_ (_);⊙◌" ⊙repr
+    )
+
+    RemoveQuotesIfPresent ← |1 (
+      ⍥(↘1) =@" ⊸⊢
+      ⍥(↘¯1) =@" ⊸⊣
     )
 
     ParseRequest ← (
@@ -78,13 +102,19 @@
     ReturnOk ← |2 (˜$"HTTP/1.1 200 OK\nContent-Length: _\nContent-Type: _\n\n_" ⊙⊸⧻)
 
     # get text content of route
-    HandleRoute ← |1 (
+    # route, request
+    HandleRoute ← |2 (
       ⊸Route~Type°□
       # 0: ServeFileRoute
       ⨬(Route~InnerData
         ⊸ServeFileRoute~MimeType
         ⊙ServeFileRoute~Path
         ⊙GetFile
+        ReturnOk
+        ⊙◌
+      | Route~InnerData
+        ⊸DynamicRoute~MimeType
+        ⊙(RemoveQuotesIfPresent EvalWithArguement DynamicRoute~Code)
         ReturnOk
       | ⍤ "Invalid route type")
     )
@@ -99,13 +129,24 @@
         # push map onto stack
         ⊙(⊸State~Map)
         # get path of request
-        □↘1°□ get"Path"
+        □↘1°□ ⊸get"Path"
         # get route, if it doesn't exist, try get route 404, else return string "404"
-        ⍣(HandleRoute ⊸get|HandleRoute ⊸get□"404"◌|ReturnOk "text/plain" "404: Page not found")
+        # path, req, map
+        # req, path, map
+        # dip by get -- req, route, map
+        # bw route, req, map
+
+        # reorient from path, req, map -> req, path, map
+        ⊃⋅∘∘
+        ⍣(˜HandleRoute⊙⊸get
+        | ˜HandleRoute⊙(get□"404")◌
+        | ReturnOk "text/plain" "404: Page not found")
         ⊙◌)
       ˜(⊸&w)
       &cl
     )
+
+    FindReplace ← ()
 
   └─╴
 
@@ -148,7 +189,7 @@
 
   # serves a file as the index
   # file path, state object
-  ServeIndex ← |2 (ServeFileAt "/")
+  ServeIndex ← |2 (ServeFileAt "")
 
   ServeDir ← |2 (
     # get a list of all the files in the directory
@@ -164,10 +205,21 @@
     )
   )
 
+  DynamicRoute! ←^ (
+    °□⊢
+    # escape quotes
+    ⍜⊜∘≡⋅"\\\\\"" ⊸⦷ "\\\""
+    ⍜⊜∘≡⋅"\\\"" ⊸⦷ "\""
+    $"˜WebServer~Serve WebServer~Utils~Dr \"_\""
+  )
 └─╴
 
 # served files must be in www/
 WebServer~New "localhost:8000"
 WebServer~ServeDir ""
 WebServer~ServeIndex "index.html"
+WebServer~DynamicRoute!(⌊×100⚂) "text/plain" "rand"
+WebServer~DynamicRoute!(°[°$"_-_-_ _:_:_"] ⍚(⬚@0↙¯⊙°⋕) [4 2 2 2 2 2] datetime now) "text/plain" "time"
+WebServer~DynamicRoute!($"{\"randomNumber\": _}" ⚂) "application/json" "rand_json"
+WebServer~DynamicRoute!(&fras ⊡⊡⌊×⚂⊸⧻⊚⊸≡₀(=5/+=".html"⬚@ ↙¯5°□) &fld "www/") "text/html" "rand_page"
 WebServer~Listen
